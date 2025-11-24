@@ -1,0 +1,27 @@
+---
+title: Security Policy
+description: Baselines for data handling, access control, and incident response.
+---
+
+## Access
+
+- Enforce SSO with MFA for all production systems.
+- Least-privilege by default; quarterly access reviews.
+- Secrets live in a managed vault; never in repos or chat.
+
+## Data handling
+
+- Classify data as Public, Internal, or Restricted.
+- Restricted data requires encryption in transit and at rest.
+- Backups must be tested monthly with restore drills.
+
+## Incident response
+
+- Declare incidents in #incidents with severity and commander.
+- First response within 15 minutes; run a blameless review within 72 hours.
+- Track follow-ups in the PR review template until closed.
+
+## Dependencies
+
+- Keep third-party dependencies patched monthly.
+- Monitor CI for vulnerabilities; block releases on critical findings.

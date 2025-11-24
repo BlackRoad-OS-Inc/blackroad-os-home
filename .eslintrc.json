@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": ["next", "next/core-web-vitals", "plugin:mdx/recommended", "prettier"],
+  "settings": {
+    "mdx/code-blocks": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.mdx", "**/*.md"],
+      "parser": "eslint-mdx",
+      "rules": {
+        "react/jsx-no-undef": "off"
+      }
+    }
+  ]
+}

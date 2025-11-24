@@ -1,0 +1,62 @@
+[
+  {
+    "section": "Home",
+    "pages": [
+      {
+        "title": "Welcome to BlackRoad OS Home",
+        "description": "Operating handbook, governance portal, and templates for teams.",
+        "path": "/"
+      }
+    ]
+  },
+  {
+    "section": "Governance",
+    "pages": [
+      {
+        "title": "Decision Flow",
+        "description": "Lightweight steps for proposing, validating, and recording decisions.",
+        "path": "/governance/decision-flow"
+      },
+      {
+        "title": "Security Policy",
+        "description": "Baselines for data handling, access control, and incident response.",
+        "path": "/governance/security-policy"
+      }
+    ]
+  },
+  {
+    "section": "Handbook",
+    "pages": [
+      {
+        "title": "Culture",
+        "description": "Operating principles, rituals, and behaviors that shape how we work.",
+        "path": "/handbook/culture"
+      },
+      {
+        "title": "Glossary",
+        "description": "Shared vocabulary for the BlackRoad OS Home handbook.",
+        "path": "/handbook/glossary"
+      },
+      {
+        "title": "Roles",
+        "description": "Core responsibilities, decision rights, and signals of success for each role.",
+        "path": "/handbook/roles"
+      }
+    ]
+  },
+  {
+    "section": "Templates",
+    "pages": [
+      {
+        "title": "Meeting Agenda Template",
+        "description": "Reusable agenda skeleton with timeboxes and outcomes.",
+        "path": "/templates/meeting-agenda"
+      },
+      {
+        "title": "PR Review Template",
+        "description": "Checklist for thorough reviews and release notes.",
+        "path": "/templates/pr-review"
+      }
+    ]
+  }
+]

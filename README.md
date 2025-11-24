@@ -1,30 +1,42 @@
-<!-- Repository overview for BlackRoad OS handbook and governance hub. -->
-# blackroad-os-home
+# BlackRoad OS · Home Handbook
 
-blackroad-os-home is the handbook and governance repository for BlackRoad Inc., an AI-first company operated by a single human orchestrator and many agents.
+An operating-handbook & governance portal for the BlackRoad OS. Built with Nextra Docs on Next.js 14.
 
-## Purpose
+## Quickstart
 
-This repository is the source of truth for how BlackRoad operates: mission, principles, organization model, decision-making, policies, and playbooks for humans and agents. It is designed to be easy to read, diff, and reference across other BlackRoad repositories.
+```bash
+pnpm i
+pnpm dev          # http://localhost:3000
+pnpm build        # static export to out/ (gh-pages ready)
+```
 
-## Relationship to other repos
+Deploy (handled by CI):
 
-- **blackroad-os-core**: domain models and schemas, including journal and decision primitives.
-- **blackroad-os-operator**: agents and orchestrators that execute work.
-- **blackroad-os-infra**: infrastructure definitions and runbooks for operating services.
-- **blackroad-os-docs**: technical documentation and architecture references.
-- **blackroad-os-web**: public-facing site content and marketing assets.
+```bash
+GIT_USER=github-actions pnpm run deploy
+```
 
-## Repository map
+## Project Layout
 
-- `/handbook`: how BlackRoad works (mission, principles, organization structure, decision-making, meeting cadences).
-- `/policies`: rules humans and agents must follow.
-- `/playbooks`: step-by-step responses to common situations.
-- `/meta`: glossary and contributor information.
+- `pages/` — MDX handbook sections and templates.
+- `lib/` — helpers for signing builds and client-side search.
+- `scripts/` — post-build hooks and TOC generation utilities.
+- `docs/` — contributor guidance.
+- `public/` — static assets, generated beacon, and exported site.
 
-## How to propose changes
+## Development Notes
 
-- Open a pull request that describes the change and the rationale.
-- Keep updates small and well-scoped to make review easier.
-- Changes to policy files require orchestrator approval before merging.
-- Reference related work in other repositories when relevant so agents can trace dependencies.
+- Content files use front-matter (`--- title: ... ---`). Keep pages under 120 lines.
+- `npm run build` triggers TOC generation and build signature writing.
+- FlexSearch powers the client-side index; see `lib/search.ts` and `components/SearchPanel`.
+- Auth is read-only; GitHub SSO is stubbed for future integration.
+- Use the TODO markers (`<!-- TODO(home-next): ... -->`) to track deferred components.
+
+## Linting & Formatting
+
+- ESLint (with `eslint-mdx`) and Prettier are configured. Run `pnpm lint`.
+- Tailwind config is present for future styling needs.
+
+## Environment
+
+Copy `home.env.example` to `.env.local` if you need to experiment with feature flags or future auth keys. No secrets are required for local dev.
