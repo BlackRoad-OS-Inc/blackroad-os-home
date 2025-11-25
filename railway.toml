@@ -1,0 +1,12 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm run start:home"
+healthcheckPath = "/api/health/"
+restartPolicy = "on-failure"
+
+[variables]
+SERVICE_NAME = "blackroad-os-home"
+PORT = "3000"
+ENVIRONMENT = "production"

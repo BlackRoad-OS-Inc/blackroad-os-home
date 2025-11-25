@@ -7,10 +7,37 @@ An operating-handbook & governance portal for the BlackRoad OS. Built with Nextr
 ```bash
 pnpm i
 pnpm dev          # http://localhost:3000
-pnpm build        # static export to out/ (gh-pages ready)
+pnpm build        # production build
+pnpm start:home   # start production server on PORT (default 3000)
 ```
 
-Deploy (handled by CI):
+## Deployment
+
+### Railway Deployment
+
+This service is configured for Railway deployment using Nixpacks.
+
+Configuration files:
+- `railway.toml` - Railway build and deploy settings
+
+Environment variables (set automatically via railway.toml):
+- `SERVICE_NAME` - blackroad-os-home
+- `PORT` - 3000
+- `ENVIRONMENT` - production
+
+### Healthcheck
+
+The service exposes a health endpoint at `/api/health/` that returns:
+```json
+{
+  "status": "ok",
+  "service": "blackroad-os-home"
+}
+```
+
+### GitHub Pages (Static Export)
+
+For static export deployment (gh-pages), temporarily add `output: 'export'` to `next.config.mjs`:
 
 ```bash
 GIT_USER=github-actions pnpm run deploy
@@ -19,6 +46,7 @@ GIT_USER=github-actions pnpm run deploy
 ## Project Layout
 
 - `pages/` — MDX handbook sections and templates.
+- `pages/api/` — API routes (health endpoint).
 - `lib/` — helpers for signing builds and client-side search.
 - `scripts/` — post-build hooks and TOC generation utilities.
 - `docs/` — contributor guidance.
@@ -31,6 +59,16 @@ GIT_USER=github-actions pnpm run deploy
 - FlexSearch powers the client-side index; see `lib/search.ts` and `components/SearchPanel`.
 - Auth is read-only; GitHub SSO is stubbed for future integration.
 - Use the TODO markers (`<!-- TODO(home-next): ... -->`) to track deferred components.
+
+## Start Commands
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development server with hot reload |
+| `pnpm build` | Create production build |
+| `pnpm start` | Start production server |
+| `pnpm start:home` | Start production server (Railway compatible) |
+| `pnpm lint` | Run ESLint |
 
 ## Linting & Formatting
 
