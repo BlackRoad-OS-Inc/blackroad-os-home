@@ -80,9 +80,9 @@ This repo is **alive**, not frozen:
 
 ### Any new doc should answer:
 
-1. 1️⃣ **Who is this for?** (role/agent type)
-2. 2️⃣ **When do they use it?** (trigger/event)
-3. 3️⃣ **What's the outcome if they follow it?**
+1️⃣ **Who is this for?** (role/agent type)
+2️⃣ **When do they use it?** (trigger/event)
+3️⃣ **What's the outcome if they follow it?**
 
 ---
 
@@ -104,6 +104,6 @@ This repo is **alive**, not frozen:
 
 If a new person or agent joins BlackRoad OS and only sees this repo, they should be able to:
 
-1. 1️⃣ Understand what BlackRoad OS is trying to do.
-2. 2️⃣ Know how work flows (rituals, roles, decision-making).
-3. 3️⃣ Find the right next repo or document for their job.
+1️⃣ Understand what BlackRoad OS is trying to do.
+2️⃣ Know how work flows (rituals, roles, decision-making).
+3️⃣ Find the right next repo or document for their job.
