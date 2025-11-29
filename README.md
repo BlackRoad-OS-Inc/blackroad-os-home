@@ -1,6 +1,14 @@
-# BlackRoad OS · Home Handbook
+# 🏠 BlackRoad OS · Home Handbook
+
+> **Company Home 🏠📚** – handbook, meeting templates, governance, and "how we work" operating system.
 
 An operating-handbook & governance portal for the BlackRoad OS. Built with Nextra Docs on Next.js 14.
+
+## 🎯 Mission
+
+Be the **home base** for BlackRoad OS, Inc. – the place every human/agent lands first.
+
+For the full system specification including ownership, design principles, and success criteria, see **[SYSTEM.md](./SYSTEM.md)**.
 
 ## Quickstart
 
