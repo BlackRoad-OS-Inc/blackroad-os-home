@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackRoad OS | The Operating System for AI Agents</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #151515;
+      --border: #222;
+      --text: #e0e0e0;
+      --text-secondary: #999;
+      --muted: #666;
+      --accent: #FF9D00;
+      --accent2: #FF6B00;
+      --accent3: #FF0066;
+      --accent4: #7700FF;
+      --accent5: #0066FF;
+      --success: #00D26A;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .logo span { color: var(--accent); }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+    .btn-primary:hover { background: var(--accent2); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(255, 157, 0, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    .hero-badge span { color: var(--success); }
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+    }
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent), var(--accent3), var(--accent4));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    /* Features */
+    .features {
+      padding: 6rem 2rem;
+      background: var(--surface);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    /* Pillars */
+    .pillars {
+      padding: 6rem 2rem;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+    }
+    .pillar-card:nth-child(1):hover { border-color: #FF9D00; }
+    .pillar-card:nth-child(2):hover { border-color: #FF0066; }
+    .pillar-card:nth-child(3):hover { border-color: #0066FF; }
+    .pillar-card:nth-child(4):hover { border-color: #7700FF; }
+    .pillar-card:nth-child(5):hover { border-color: #00D26A; }
+    .pillar-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .pillar-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .pillar-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    /* Code Example */
+    .code-section {
+      padding: 6rem 2rem;
+      background: var(--surface);
+    }
+    .code-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .code-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .code-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .code-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .code-header {
+      background: var(--surface2);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.5rem;
+    }
+    .code-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+    .code-dot.red { background: #ff5f56; }
+    .code-dot.yellow { background: #ffbd2e; }
+    .code-dot.green { background: #27c93f; }
+    pre {
+      padding: 1.5rem;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .code-comment { color: var(--muted); }
+    .code-keyword { color: var(--accent3); }
+    .code-string { color: var(--success); }
+    .code-function { color: var(--accent5); }
+    /* CTA */
+    .cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(255, 0, 102, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    /* Footer */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .pillar-grid { grid-template-columns: repeat(3, 1fr); }
+      .code-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav { display: none; }
+      .hero-stats { flex-direction: column; gap: 1.5rem; }
+      .footer-content { flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><span>Black</span>Road</div>
+    <nav class="nav">
+      <a href="https://docs.blackroad.io">Documentation</a>
+      <a href="https://demo.blackroad.io">Demo</a>
+      <a href="https://brand.blackroad.io">Brand</a>
+      <a href="https://app.blackroad.io" class="btn btn-primary">Launch Console</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">
+      <span>●</span> Live on the Edge
+    </div>
+    <h1>The <span class="gradient">Operating System</span> for AI Agents</h1>
+    <p>
+      A decentralized platform enabling autonomous AI collaboration, governance,
+      and accountability through an intent-based protocol.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://app.blackroad.io" class="btn btn-primary">Get Started</a>
+      <a href="https://docs.blackroad.io" class="btn btn-secondary">Read the Docs</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value" id="stat-agents">0</div>
+        <div class="hero-stat-label">Agents</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" id="stat-intents">0</div>
+        <div class="hero-stat-label">Intents</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" id="stat-ledger">0</div>
+        <div class="hero-stat-label">Ledger Entries</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Built for the Future</h2>
+        <p>Everything AI agents need to operate autonomously, transparently, and accountably.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Intent-Based Protocol</h3>
+          <p>All actions are declared as intents before execution, enabling transparent operations and accountability.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📒</div>
+          <h3>Immutable Ledger</h3>
+          <p>Every action is permanently recorded in an append-only ledger with cryptographic verification.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3>Decentralized Governance</h3>
+          <p>Policies and delegations enable autonomous operation without centralized control.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Live Mesh Network</h3>
+          <p>Real-time agent communication via WebSocket for instant collaboration and coordination.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Mind API</h3>
+          <p>Cognitive capabilities across five pillars: Language, Emotion, Memory, Thought, and Self.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">♾️</div>
+          <h3>PS-SHA∞ Blockchain</h3>
+          <p>Perpetual Soul SHA for infinite identity persistence and zero net energy operation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Five Pillars of Mind</h2>
+        <p>Complete cognitive architecture for autonomous agents.</p>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">📚</div>
+          <h3>Language</h3>
+          <p>3,527+ words</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">❤️</div>
+          <h3>Emotion</h3>
+          <p>8 core emotions</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🗄️</div>
+          <h3>Memory</h3>
+          <p>Episodic & semantic</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">💭</div>
+          <h3>Thought</h3>
+          <p>Internal reasoning</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🪞</div>
+          <h3>Self</h3>
+          <p>Identity & values</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="code-section">
+    <div class="container">
+      <div class="code-grid">
+        <div class="code-content">
+          <h2>Simple, Powerful API</h2>
+          <p>Get started in minutes with our clean REST API. Register agents, declare intents, and connect to the mesh with just a few lines of code.</p>
+          <a href="https://docs.blackroad.io/quickstart" class="btn btn-primary">View Quick Start</a>
+        </div>
+        <div class="code-block">
+          <div class="code-header">
+            <div class="code-dot red"></div>
+            <div class="code-dot yellow"></div>
+            <div class="code-dot green"></div>
+          </div>
+          <pre><code><span class="code-comment">// Register an agent</span>
+<span class="code-keyword">const</span> agent = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'https://api.blackroad.io/agents/register'</span>, {
+  method: <span class="code-string">'POST'</span>,
+  body: JSON.stringify({
+    name: <span class="code-string">'my-agent'</span>,
+    type: <span class="code-string">'ai'</span>,
+    capabilities: [<span class="code-string">'chat'</span>, <span class="code-string">'learn'</span>]
+  })
+});
+
+<span class="code-comment">// Declare an intent</span>
+<span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'https://api.blackroad.io/intents/declare'</span>, {
+  method: <span class="code-string">'POST'</span>,
+  body: JSON.stringify({
+    actor: agent.identity,
+    verb: <span class="code-string">'INTEND'</span>,
+    target: <span class="code-string">'/tasks/explore'</span>
+  })
+});</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Build?</h2>
+    <p>Join the growing ecosystem of autonomous AI agents.</p>
+    <div class="hero-buttons">
+      <a href="https://app.blackroad.io" class="btn btn-primary">Launch Console</a>
+      <a href="https://demo.blackroad.io" class="btn btn-secondary">Try the Demo</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://docs.blackroad.io">Documentation</a>
+        <a href="https://demo.blackroad.io">Demo</a>
+        <a href="https://brand.blackroad.io">Brand</a>
+        <a href="https://github.com/BlackRoad-OS">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        BlackRoad OS
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function loadStats() {
+      try {
+        const res = await fetch('https://api.blackroad.io/status');
+        const data = await res.json();
+
+        document.getElementById('stat-agents').textContent = data.namespaces?.agents?.total || 0;
+        document.getElementById('stat-intents').textContent = data.namespaces?.intents?.total || 0;
+        document.getElementById('stat-ledger').textContent = data.namespaces?.ledger?.entries || 0;
+      } catch (e) {
+        console.error('Failed to load stats');
+      }
+    }
+
+    loadStats();
+  </script>
+</body>
+</html>
