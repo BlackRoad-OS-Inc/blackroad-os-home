@@ -42,9 +42,6 @@ config:
   - changed-files:
       - any-glob-to-any-file:
           - '*.config.*'
-          - '*.json'
-          - '*.yaml'
-          - '*.yml'
           - '*.toml'
 
 tests:
