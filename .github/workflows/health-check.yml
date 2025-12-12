@@ -9,6 +9,8 @@ jobs:
   health-check:
     name: Check Service Health
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
 
     steps:
       - name: Check home.blackroad.io
