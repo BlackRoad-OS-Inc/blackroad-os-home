@@ -3,10 +3,20 @@ builder = "NIXPACKS"
 
 [deploy]
 startCommand = "npm run start:home"
+numReplicas = 1
 healthcheckPath = "/api/health/"
-restartPolicy = "on-failure"
+healthcheckTimeout = 10
+healthcheckInterval = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+# Resource limits (prevent over-allocation)
+[deploy.resources]
+memory = "512Mi"
+cpu = "0.5"
 
 [variables]
 SERVICE_NAME = "blackroad-os-home"
 PORT = "3000"
 ENVIRONMENT = "production"
+NODE_ENV = "production"
