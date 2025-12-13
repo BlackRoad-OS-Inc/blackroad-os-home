@@ -1,16 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface HealthResponse {
-  status: string
-  service: string
-}
-
-export default function handler(
-  _req: NextApiRequest,
-  res: NextApiResponse<HealthResponse>
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
     status: 'ok',
-    service: process.env.SERVICE_NAME || 'blackroad-os-home'
-  })
+    service: 'blackroad-os-home',
+    timestamp: new Date().toISOString(),
+  });
 }
