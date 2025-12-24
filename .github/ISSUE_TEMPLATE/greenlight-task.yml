@@ -1,0 +1,133 @@
+name: "🟢 GreenLight Task"
+description: "Project management task - features, workflows, collaboration"
+title: "[🟢 GREEN] "
+labels: ["greenlight", "task", "project-management"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🟢 GreenLight: Project Management
+        
+        Track the **state and progress** of work in BlackRoad OS.
+        - **Lifecycle States**: ⬛ void → 📋 inbox → 🚧 wip → ✅ done
+        - **Domains**: 🛣️ platform, 🌀 ai, ⛓️ chain, 🎨 creative, etc.
+        - **Priority**: 🔥 p0 → 🧊 p5
+        - **Scale**: 👉 micro → 🌌 universal
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      description: What area does this work fall under?
+      options:
+        - "🛣️ Platform - Core BlackRoad OS"
+        - "🌀 AI - AI/ML systems"
+        - "⛓️ Chain - Blockchain/Web3"
+        - "🎨 Creative - Design/Brand"
+        - "📊 Data - Analytics/Data"
+        - "🔐 Security - Auth/Security"
+        - "📱 Mobile - Mobile apps"
+        - "🌐 Web - Web apps"
+        - "🔧 DevOps - Infrastructure"
+        - "📚 Docs - Documentation"
+        - "🧪 Testing - QA/Testing"
+        - "🎯 Product - Product strategy"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this?
+      options:
+        - "🔥 P0 - Critical (blocks everything)"
+        - "⭐ P1 - High (this week)"
+        - "📌 P2 - Medium (this sprint)"
+        - "📋 P3 - Normal (backlog)"
+        - "💭 P4 - Low (nice to have)"
+        - "🧊 P5 - Someday (maybe)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scale
+    attributes:
+      label: Scale
+      description: How big is this task?
+      options:
+        - "👉 Micro - Small change"
+        - "🫳 Minor - Feature component"
+        - "🤲 Medium - Full feature"
+        - "🍖 Major - Multi-feature"
+        - "🎢 Epic - Project phase"
+        - "🌸 Milestone - Product release"
+        - "⭐ Universe - Platform shift"
+        - "🌌 Universal - Ecosystem change"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to happen?
+      description: Clear description of the work
+      placeholder: "Build user dashboard with real-time activity feed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: How do we know this is complete?
+      placeholder: |
+        - Dashboard shows user activity in real-time
+        - Updates via WebSocket connection
+        - Works on mobile and desktop
+        - Deployed to production
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Links, background, dependencies
+      placeholder: "Related to #123. Design in Figma. Depends on websocket service."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: assignee_type
+    attributes:
+      label: Who should handle this?
+      description: Select agent or human
+      options:
+        - "🤖 Codex - General AI agent"
+        - "🎵 Aria - Infrastructure Queen"
+        - "🌌 Alice - Migration Architect"
+        - "🧠 Lucidia - AI Core"
+        - "🎨 Cora - Creative Lead"
+        - "💎 Caddy - Server/Edge"
+        - "🌸 Cece - Frontend/Coordination"
+        - "⚡ Silas - Backend/Systems"
+        - "🌍 Gaia - Data/Earth"
+        - "🎯 Tosha - Product/Strategy"
+        - "🛣️ Roadie - Platform/Core"
+        - "✨ Holo - 3D/Visual"
+        - "🌙 Oloh - Reverse/Mirror"
+        - "👤 Human Developer"
+        - "🤝 Team Effort"
+        - "📋 Unassigned - Triage"
+    validations:
+      required: false
+
+  - type: textarea
+    id: memory_tags
+    attributes:
+      label: Memory Tags (optional)
+      description: Tags for GreenLight memory system
+      placeholder: "websocket, real-time, dashboard, user-activity"
+    validations:
+      required: false

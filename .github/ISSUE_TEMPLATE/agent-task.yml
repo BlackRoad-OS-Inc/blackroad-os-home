@@ -78,8 +78,20 @@ body:
     attributes:
       label: Assigned agent
       options:
-        - "Codex"
-        - "Any available agent"
-        - "Specific agent (note in context)"
+        - "🤖 Codex - General Agent"
+        - "🎵 Aria - Infrastructure"
+        - "🌌 Alice - Migration"
+        - "🧠 Lucidia - AI Core"
+        - "🎨 Cora - Creative"
+        - "💎 Caddy - Server/Edge"
+        - "🌸 Cece - Frontend"
+        - "⚡ Silas - Backend"
+        - "🌍 Gaia - Data"
+        - "🎯 Tosha - Product"
+        - "🛣️ Roadie - Platform"
+        - "✨ Holo - 3D/Visual"
+        - "🌙 Oloh - Mirror"
+        - "🤝 Any available agent"
+        - "📋 Specific agent (note in context)"
     validations:
       required: false

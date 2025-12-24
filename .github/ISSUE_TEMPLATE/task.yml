@@ -58,8 +58,21 @@ body:
       label: Who should handle this?
       description: Human or agent?
       options:
-        - "Codex / Agent"
-        - "Human (me)"
-        - "Unassigned - triage needed"
+        - "🤖 Codex / Agent"
+        - "🎵 Aria - Infrastructure"
+        - "🌌 Alice - Migration"
+        - "🧠 Lucidia - AI Core"
+        - "🎨 Cora - Creative"
+        - "💎 Caddy - Server/Edge"
+        - "🌸 Cece - Frontend"
+        - "⚡ Silas - Backend"
+        - "🌍 Gaia - Data"
+        - "🎯 Tosha - Product"
+        - "🛣️ Roadie - Platform"
+        - "✨ Holo - 3D/Visual"
+        - "🌙 Oloh - Mirror"
+        - "👤 Human (me)"
+        - "🤝 Team Effort"
+        - "📋 Unassigned - triage needed"
     validations:
       required: false

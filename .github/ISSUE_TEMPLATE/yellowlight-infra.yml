@@ -1,0 +1,152 @@
+name: "🟡 YellowLight Infrastructure"
+description: "Infrastructure, deployments, CI/CD, operations"
+title: "[🟡 YELLOW] "
+labels: ["yellowlight", "infrastructure", "ops"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🟡 YellowLight: Infrastructure
+        
+        Manage the **infrastructure backbone** of BlackRoad OS.
+        - **Platforms**: ☁️ Cloudflare, 🚂 Railway, 🥧 Pi, 🌊 DigitalOcean
+        - **Focus**: Repos, connectors, deployments, CI/CD, health monitoring
+        - **Integration**: All infrastructure logged to PS-SHA∞ memory
+
+  - type: dropdown
+    id: infra_type
+    attributes:
+      label: Infrastructure Type
+      description: What kind of infrastructure work?
+      options:
+        - "🚀 Deployment - Deploy or update service"
+        - "🔌 Connector - API/webhook integration"
+        - "🐙 Repository - Repo setup or config"
+        - "🧪 CI/CD - Pipeline or automation"
+        - "💚 Health - Monitoring or alerts"
+        - "🔐 Security - Secrets or access"
+        - "🌐 DNS - Domain or routing"
+        - "📦 Database - DB setup or migration"
+        - "🔄 Backup - Backup/restore system"
+        - "⚡ Performance - Optimization"
+        - "🆘 Incident - Production issue"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Target Platform
+      description: Which platform is involved?
+      options:
+        - "☁️ Cloudflare - Pages/Workers/KV/D1"
+        - "🚂 Railway - Apps/Postgres/Redis"
+        - "🌊 DigitalOcean - Droplets/Spaces"
+        - "🥧 Raspberry Pi - Local hardware"
+        - "🐙 GitHub - Actions/Repos"
+        - "📱 Vercel - Edge deployment"
+        - "🔥 Firebase - Backend services"
+        - "🐳 Docker - Containers"
+        - "☸️ Kubernetes - Orchestration"
+        - "🌐 Multi-platform"
+        - "🔧 Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent?
+      options:
+        - "🔥 P0 - Production down"
+        - "⚠️ P1 - Critical incident"
+        - "📌 P2 - Important change"
+        - "📋 P3 - Routine work"
+        - "💭 P4 - Nice to have"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to happen?
+      description: Clear description of infrastructure work
+      placeholder: "Deploy new API service to Railway with Postgres database"
+    validations:
+      required: true
+
+  - type: textarea
+    id: services
+    attributes:
+      label: Services Involved
+      description: Which services/repos/domains are affected?
+      placeholder: |
+        - Service: blackroad-api
+        - Repo: github.com/BlackRoad-OS/blackroad-api
+        - Domain: api.blackroad.io
+        - Database: blackroad-prod
+    validations:
+      required: false
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Success criteria
+      placeholder: |
+        - Service deployed to Railway
+        - Health endpoint responding
+        - Database migrated successfully
+        - DNS configured
+        - Monitoring alerts configured
+    validations:
+      required: true
+
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback Plan
+      description: How to undo if something goes wrong?
+      placeholder: "Revert to previous Railway deployment via dashboard"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Technical Context
+      description: Environment variables, dependencies, version info
+      placeholder: |
+        Version: v1.2.3
+        Environment: production
+        Dependencies: postgres@15, redis@7
+    validations:
+      required: false
+
+  - type: dropdown
+    id: assignee_type
+    attributes:
+      label: Who should handle this?
+      description: Infrastructure specialist preferred
+      options:
+        - "🎵 Aria - Infrastructure Queen (RECOMMENDED)"
+        - "🌌 Alice - Migration Architect"
+        - "💎 Caddy - Server/Edge expert"
+        - "⚡ Silas - Backend/Systems"
+        - "🤖 Codex - General AI agent"
+        - "👤 Human DevOps"
+        - "📋 Unassigned"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: needs_monitoring
+    attributes:
+      label: Needs ongoing monitoring?
+      description: Should this be tracked post-deployment?
+      options:
+        - "✅ Yes - Add to health checks"
+        - "❌ No - One-time task"
+    validations:
+      required: false

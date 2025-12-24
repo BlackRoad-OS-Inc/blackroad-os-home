@@ -1,0 +1,169 @@
+name: "🔴 RedLight Template"
+description: "Visual templates, 3D worlds, brand, design systems"
+title: "[🔴 RED] "
+labels: ["redlight", "template", "design", "visual"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔴 RedLight: Templates & Brand
+        
+        Create **visual templates** for worlds, websites, and experiences.
+        - **Categories**: 🌍 Worlds, ✨ Animations, 🌐 Websites, 🎨 Design Systems
+        - **Tech**: Three.js, WebGL, self-contained HTML
+        - **Brand**: BlackRoad gradient (#FF9D00 → #0066FF)
+        - **Deploy**: Cloudflare Pages, GitHub Pages, Railway
+
+  - type: dropdown
+    id: template_category
+    attributes:
+      label: Template Category
+      description: What kind of visual work?
+      options:
+        - "🌍 3D World - Interactive globe/environment"
+        - "✨ Animation - Motion graphics/effects"
+        - "🌐 Website - Landing page/app"
+        - "🎨 Design System - Component library"
+        - "🎮 Interactive - Game/experience"
+        - "📱 Mobile - Mobile-first design"
+        - "🖼️ Brand - Logo/identity work"
+        - "🎥 Video - Video content/edit"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent?
+      options:
+        - "🔥 P0 - Launch blocker"
+        - "⭐ P1 - High (this week)"
+        - "📌 P2 - Medium (this sprint)"
+        - "📋 P3 - Normal (backlog)"
+        - "💭 P4 - Exploration"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to be created?
+      description: Clear description of the visual/template work
+      placeholder: "Interactive 3D Mars globe with rover missions and landing sites"
+    validations:
+      required: true
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Features / Requirements
+      description: What should this template include?
+      placeholder: |
+        - 3D Mars sphere with accurate texture
+        - 5+ biomes (polar caps, valleys, plains)
+        - Interactive rover mission markers
+        - Smooth camera controls
+        - Mobile-friendly touch controls
+        - 60+ FPS performance
+    validations:
+      required: true
+
+  - type: dropdown
+    id: base_template
+    attributes:
+      label: Base Template (if applicable)
+      description: Starting from an existing template?
+      options:
+        - "🆕 New from scratch"
+        - "🌍 blackroad-earth.html"
+        - "🌍 blackroad-earth-biomes.html"
+        - "🌍 blackroad-living-planet.html"
+        - "🌐 blackroad-metaverse.html"
+        - "✨ blackroad-animation.html"
+        - "✨ blackroad-motion.html"
+        - "🌐 schematiq-page.html"
+        - "🎮 blackroad-game.html"
+        - "🏗️ blackroad-world-template.html"
+    validations:
+      required: false
+
+  - type: textarea
+    id: brand_requirements
+    attributes:
+      label: Brand Requirements
+      description: Colors, fonts, styling notes
+      placeholder: |
+        - Use BlackRoad gradient: #FF9D00 → #FF0066 → #0066FF
+        - Font: SF Pro Display / -apple-system
+        - Golden ratio spacing (φ = 1.618)
+        - Dark theme with glowing accents
+    validations:
+      required: false
+
+  - type: textarea
+    id: performance_targets
+    attributes:
+      label: Performance Targets
+      description: FPS, load time, memory goals
+      placeholder: |
+        - Target: 60 FPS
+        - Load time: < 2 seconds
+        - Memory: < 300MB
+        - Mobile support: iOS Safari, Android Chrome
+    validations:
+      required: false
+
+  - type: dropdown
+    id: deploy_target
+    attributes:
+      label: Deployment Target
+      description: Where will this be hosted?
+      options:
+        - "☁️ Cloudflare Pages"
+        - "🐙 GitHub Pages"
+        - "🚂 Railway"
+        - "📱 Vercel"
+        - "🔧 Other/TBD"
+    validations:
+      required: false
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Success criteria
+      placeholder: |
+        - Template created and working
+        - Meets performance targets (60 FPS)
+        - Mobile-responsive
+        - Brand guidelines followed
+        - Deployed to production URL
+        - Documented in RedLight system
+    validations:
+      required: true
+
+  - type: textarea
+    id: inspiration
+    attributes:
+      label: Inspiration / References
+      description: Links to examples, mockups, designs
+      placeholder: "https://example.com/inspiration, Figma: https://..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: assignee_type
+    attributes:
+      label: Who should handle this?
+      description: Creative/visual specialist preferred
+      options:
+        - "🎨 Cora - Creative Lead (RECOMMENDED)"
+        - "✨ Holo - 3D/Visual expert"
+        - "🌸 Cece - Frontend specialist"
+        - "🤖 Codex - General AI agent"
+        - "👤 Human Designer"
+        - "🤝 Team Effort"
+        - "📋 Unassigned"
+    validations:
+      required: false
