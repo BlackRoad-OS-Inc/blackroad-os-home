@@ -39,7 +39,8 @@ jobs:
               labels: 'health-alert'
             });
             
-            if (!issues.data.find(i => i.title.includes('Health Alert'))) {
+            const hasExistingHealthAlert = issues.data.length > 0;
+            if (!hasExistingHealthAlert) {
               await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
