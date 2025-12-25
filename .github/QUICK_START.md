@@ -21,10 +21,13 @@ General task/unclear                → 🎯 Task (existing)
 2. Select domain: "🌐 Web"
 3. Set priority: "⭐ P1 - High"
 4. Set scale: "🤲 Medium - Full feature"
-5. Assign to: "🌸 Cece - Frontend"
-6. Submit!
+5. **🆕 Optional**: Slack channel: "⚙️ #engineering"
+6. **🆕 Optional**: Link Linear issue: "BR-123"
+7. Assign to: "🌸 Cece - Frontend"
+8. Submit!
 
-**Best for**: Features, workflows, coordination tasks
+**Best for**: Features, workflows, coordination tasks  
+**🆕 Integrations**: 8 Slack channels, Linear, Notion
 
 ## 🟡 YellowLight - "How are we deploying it?"
 
@@ -34,10 +37,13 @@ General task/unclear                → 🎯 Task (existing)
 2. Select type: "🚀 Deployment"
 3. Select platform: "🚂 Railway"
 4. Set priority: "📌 P2 - Important"
-5. Assign to: "🎵 Aria - Infrastructure Queen"
-6. Submit!
+5. **🆕 Optional**: Slack: "🚀 #ops-deployments"
+6. **🆕 Optional**: Link Linear issue
+7. Assign to: "🎵 Aria - Infrastructure Queen"
+8. Submit!
 
-**Best for**: Infrastructure, deployments, ops work
+**Best for**: Infrastructure, deployments, ops work  
+**🆕 Integrations**: 5 ops Slack channels, Linear
 
 ## 🔴 RedLight - "What do users see?"
 
@@ -47,7 +53,10 @@ General task/unclear                → 🎯 Task (existing)
 2. Select category: "🌍 3D World"
 3. Set priority: "⭐ P1 - High"
 4. Base template: "🌍 blackroad-earth.html"
-5. Assign to: "✨ Holo - 3D/Visual"
+5. **🆕 Optional**: Slack: "🎨 #design"
+6. **🆕 Optional**: Notion design doc
+7. **🆕 Optional**: Figma link
+8. Assign to: "✨ Holo - 3D/Visual"
 6. Submit!
 
 **Best for**: Visual templates, 3D worlds, design
@@ -94,12 +103,28 @@ RedLight has 23 existing templates you can build from:
 - Animation templates (motion, particles)
 - See `.trinity/redlight/templates/` for full list
 
+### 🆕 5. Use Integrations
+All templates now support external service integrations:
+- **💬 Slack**: Auto-post updates to team channels
+- **📋 Linear**: Sync with project management
+- **📝 Notion**: Link to documentation
+- **🎨 Figma**: Reference designs (RedLight)
+
+**When to use:**
+- Working with the team? → Enable Slack notifications
+- Tracking in Linear? → Link the issue
+- Need documentation? → Add Notion page
+- Design work? → Link Figma file
+
 ## 🔗 Important Links
 
 - **Full Workflow**: `.github/LIGHT_TRINITY_WORKFLOW.md`
 - **Trinity Overview**: `.trinity/README.md`
 - **Integration Summary**: `.github/INTEGRATION_SUMMARY.md`
 - **GreenLight Docs**: `.trinity/greenlight/docs/`
+  - **Slack Integration**: `GREENLIGHT_SLACK_EXTENSION.md`
+  - **Linear Integration**: `GREENLIGHT_LINEAR_EXTENSION.md`
+  - **Notion Integration**: `GREENLIGHT_NOTION_EXTENSION.md`
 - **YellowLight Docs**: `.trinity/yellowlight/docs/`
 - **RedLight Docs**: `.trinity/redlight/docs/`
 

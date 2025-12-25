@@ -131,3 +131,38 @@ body:
       placeholder: "websocket, real-time, dashboard, user-activity"
     validations:
       required: false
+
+  - type: dropdown
+    id: notify_slack
+    attributes:
+      label: Slack Notification
+      description: Post updates to Slack channel?
+      options:
+        - "❌ No Slack notification"
+        - "📢 #general - General announcements"
+        - "⚙️ #engineering - Engineering work"
+        - "🚀 #ops-deployments - Deployments"
+        - "🚦 #ops-greenlight - GreenLight updates"
+        - "📋 #linear-updates - Issue tracking"
+        - "🐙 #github-activity - Code changes"
+        - "🤖 #ai-logs - AI agent activity"
+    validations:
+      required: false
+
+  - type: input
+    id: linear_issue
+    attributes:
+      label: Linear Issue (optional)
+      description: Link to related Linear issue
+      placeholder: "BR-123 or https://linear.app/blackroad/issue/BR-123"
+    validations:
+      required: false
+
+  - type: input
+    id: notion_page
+    attributes:
+      label: Notion Page (optional)
+      description: Link to related Notion documentation
+      placeholder: "https://notion.so/..."
+    validations:
+      required: false

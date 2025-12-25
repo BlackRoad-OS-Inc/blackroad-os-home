@@ -150,3 +150,26 @@ body:
         - "❌ No - One-time task"
     validations:
       required: false
+
+  - type: dropdown
+    id: notify_slack
+    attributes:
+      label: Slack Notification
+      description: Post deployment updates to Slack?
+      options:
+        - "❌ No Slack notification"
+        - "🚨 #ops-alerts - Critical alerts"
+        - "🚀 #ops-deployments - Deployments"
+        - "⚙️ #engineering - Engineering updates"
+        - "🚦 #ops-greenlight - GreenLight tracking"
+    validations:
+      required: false
+
+  - type: input
+    id: linear_issue
+    attributes:
+      label: Linear Issue (optional)
+      description: Link to related Linear infrastructure issue
+      placeholder: "BR-123 or https://linear.app/blackroad/issue/BR-123"
+    validations:
+      required: false

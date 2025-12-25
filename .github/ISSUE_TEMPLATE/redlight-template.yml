@@ -167,3 +167,35 @@ body:
         - "📋 Unassigned"
     validations:
       required: false
+
+  - type: dropdown
+    id: notify_slack
+    attributes:
+      label: Slack Notification
+      description: Share design updates in Slack?
+      options:
+        - "❌ No Slack notification"
+        - "🎨 #design - Design updates"
+        - "⚙️ #engineering - Technical team"
+        - "📢 #general - Company showcase"
+        - "🚦 #ops-greenlight - Progress tracking"
+    validations:
+      required: false
+
+  - type: input
+    id: notion_page
+    attributes:
+      label: Notion Design Doc (optional)
+      description: Link to design documentation in Notion
+      placeholder: "https://notion.so/..."
+    validations:
+      required: false
+
+  - type: input
+    id: figma_link
+    attributes:
+      label: Figma Design (optional)
+      description: Link to Figma design/prototype
+      placeholder: "https://figma.com/..."
+    validations:
+      required: false

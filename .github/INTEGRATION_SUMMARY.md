@@ -13,6 +13,7 @@ This PR adds comprehensive Light Trinity system integration to the GitHub issue 
 - **Scale**: 8 levels from Micro 👉 to Universal 🌌
 - **Agent Assignment**: Full BlackRoad agent roster
 - **Memory Tags**: Optional tagging for GreenLight memory system
+- **🆕 Integrations**: Slack notifications (8 channels), Linear issue linking, Notion page linking
 
 #### 🟡 YellowLight Infrastructure (`yellowlight-infra.yml`)
 - **Purpose**: Infrastructure, deployments, CI/CD, operations
@@ -21,6 +22,7 @@ This PR adds comprehensive Light Trinity system integration to the GitHub issue 
 - **Rollback Planning**: Built-in rollback plan field
 - **Agent Assignment**: Infrastructure specialists prioritized (Aria, Alice, Silas)
 - **Monitoring**: Optional ongoing monitoring flag
+- **🆕 Integrations**: Slack notifications (5 channels for ops), Linear issue linking
 
 #### 🔴 RedLight Template (`redlight-template.yml`)
 - **Purpose**: Visual templates, 3D worlds, brand, design systems
@@ -30,16 +32,19 @@ This PR adds comprehensive Light Trinity system integration to the GitHub issue 
 - **Performance Targets**: FPS, load time, memory goals
 - **Deploy Targets**: 5 deployment platforms
 - **Agent Assignment**: Creative specialists prioritized (Cora, Holo, Cece)
+- **🆕 Integrations**: Slack notifications (4 channels), Notion design docs, Figma design linking
 
 ### Updated Existing Templates
 
 #### `task.yml` - Standard Task
 - Added full BlackRoad agent roster (13 agents)
 - Emojis for visual identification
+- **🆕 Integrations**: Linear issue linking, Notion page linking
 
 #### `agent-task.yml` - Agent Task  
 - Added full BlackRoad agent roster (13 agents)
 - Emojis for visual identification
+- **🆕 Integrations**: Auto-notification on completion (Slack, Linear, Notion, or all)
 
 #### `config.yml` - Issue Template Config
 - Added link to Light Trinity System documentation
@@ -104,6 +109,41 @@ Existing Trinity compliance workflow (`.github/workflows/trinity-compliance.yml`
 - Documentation presence
 - System files
 
+### 🆕 External Service Integrations
+
+#### 💬 Slack Integration
+All templates now support Slack notifications:
+- **GreenLight**: 8 channels (#general, #engineering, #ops-deployments, #ops-greenlight, #linear-updates, #github-activity, #ai-logs, and more)
+- **YellowLight**: 5 ops channels (#ops-alerts, #ops-deployments, #engineering, #ops-greenlight)
+- **RedLight**: 4 design channels (#design, #engineering, #general, #ops-greenlight)
+- **Agent Tasks**: Auto-post completion to #ai-logs
+
+Based on `.trinity/greenlight/docs/GREENLIGHT_SLACK_EXTENSION.md`
+
+#### 📋 Linear Integration
+Issue linking and synchronization:
+- Cross-reference GitHub issues with Linear issues
+- Automatic priority mapping (Linear Urgent → GreenLight P0, etc.)
+- Status sync between platforms
+- Integrated with all templates
+
+Based on `.trinity/greenlight/docs/GREENLIGHT_LINEAR_EXTENSION.md`
+
+#### 📝 Notion Integration
+Knowledge base connections:
+- Link issues to Notion documentation
+- Reference design systems (RedLight)
+- Project tracking integration
+- Database updates on task completion
+
+Based on `.trinity/greenlight/docs/GREENLIGHT_NOTION_EXTENSION.md`
+
+#### 🎨 Figma Integration (RedLight)
+Design workflow support:
+- Link templates to Figma designs
+- Reference prototypes and specifications
+- Visual asset tracking
+
 ## How to Use
 
 ### For Users
@@ -113,16 +153,20 @@ Existing Trinity compliance workflow (`.github/workflows/trinity-compliance.yml`
    - 🟡 **YellowLight** for infrastructure/ops
    - 🔴 **RedLight** for visual/design work
 3. Fill in the template fields
-4. Assign to appropriate BlackRoad agent
-5. Submit and let the agent use memory templates to track work
+4. **🆕 Optional**: Select Slack channel for notifications
+5. **🆕 Optional**: Link Linear issue or Notion page
+6. Assign to appropriate BlackRoad agent
+7. Submit and let the agent use memory templates to track work
 
 ### For Agents
 1. Receive issue assignment via GitHub
 2. Use appropriate memory templates from `.trinity/` directory
 3. Log actions to PS-SHA∞ system
-4. Validate with Codex when applicable
-5. Update issue with progress
-6. Mark complete and log final state
+4. **🆕 Optional**: Post updates to Slack channels
+5. **🆕 Optional**: Sync status to Linear/Notion
+6. Validate with Codex when applicable
+7. Update issue with progress
+8. Mark complete and log final state
 
 ## Testing
 

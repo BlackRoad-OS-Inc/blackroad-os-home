@@ -76,3 +76,21 @@ body:
         - "📋 Unassigned - triage needed"
     validations:
       required: false
+
+  - type: input
+    id: linear_issue
+    attributes:
+      label: Linear Issue (optional)
+      description: Link to related Linear issue
+      placeholder: "BR-123"
+    validations:
+      required: false
+
+  - type: input
+    id: notion_page
+    attributes:
+      label: Notion Page (optional)
+      description: Link to Notion documentation
+      placeholder: "https://notion.so/..."
+    validations:
+      required: false

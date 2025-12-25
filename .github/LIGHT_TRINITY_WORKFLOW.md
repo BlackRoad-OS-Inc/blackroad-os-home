@@ -12,6 +12,11 @@
 **Agents:** Any agent can handle, but specialized agents preferred for their domain
 - **Best for:** Cece, Roadie, Tosha
 
+**Integrations:** 
+- 💬 Slack notifications (8 channels: #general, #engineering, #ops-deployments, #ops-greenlight, #linear-updates, #github-activity, #ai-logs)
+- 📋 Linear issue linking
+- 📝 Notion page linking
+
 ### 🟡 YellowLight Infrastructure  
 **Use for:** Infrastructure, deployments, ops work
 - Deploying services
@@ -22,6 +27,11 @@
 
 **Agents:** Infrastructure specialists strongly preferred
 - **Best for:** Aria (Infrastructure Queen), Alice (Migration), Silas (Backend)
+
+**Integrations:**
+- 💬 Slack notifications (5 channels: #ops-alerts, #ops-deployments, #engineering, #ops-greenlight)
+- 📋 Linear issue linking
+- 🚨 Critical alerts routing
 
 ### 🔴 RedLight Template
 **Use for:** Visual work, design, 3D, brand
@@ -34,6 +44,11 @@
 **Agents:** Creative specialists strongly preferred
 - **Best for:** Cora (Creative Lead), Holo (3D), Cece (Frontend)
 
+**Integrations:**
+- 💬 Slack notifications (4 channels: #design, #engineering, #general, #ops-greenlight)
+- 📝 Notion design documentation
+- 🎨 Figma design linking
+
 ### 🎯 Standard Task
 **Use for:** Generic work that doesn't fit the Trinity
 - Bug fixes (use 🐛 Bug template instead)
@@ -41,12 +56,19 @@
 - Quick changes
 - Unclear scope
 
+**Integrations:**
+- 📋 Linear issue linking
+- 📝 Notion page linking
+
 ### 🤖 Agent Task
 **Use for:** Explicit AI agent instructions
 - Automated tasks
 - Code generation
 - Repetitive work
 - Clear, executable instructions
+
+**Integrations:**
+- 🔔 Auto-notification on completion (Slack, Linear, Notion, or all)
 
 ---
 
@@ -108,6 +130,80 @@
 - **🤖 Codex** - General AI Agent
   - General-purpose development
   - Can handle most tasks across the stack
+
+---
+
+## 🔗 External Service Integrations
+
+All issue templates now support optional integrations with external services for enhanced collaboration and tracking.
+
+### 💬 Slack Integration
+
+**Channels Available:**
+- 📢 **#general** - Company announcements and showcases
+- ⚙️ **#engineering** - Engineering discussions and updates
+- 🚨 **#ops-alerts** - Critical system alerts (YellowLight)
+- 🚀 **#ops-deployments** - Deployment notifications (YellowLight)
+- 🚦 **#ops-greenlight** - GreenLight state changes
+- 📋 **#linear-updates** - Issue tracking synchronization
+- 🐙 **#github-activity** - Code changes and PRs
+- 🤖 **#ai-logs** - AI agent activity logs
+- 🎨 **#design** - Design updates and showcases (RedLight)
+
+**Usage:**
+When creating an issue, select a Slack channel from the "Slack Notification" dropdown to automatically post updates when the issue state changes.
+
+### 📋 Linear Integration
+
+**Features:**
+- Link GitHub issues to Linear issues
+- Sync status updates between platforms
+- Map Linear priorities to GreenLight priorities
+- Track deployments in Linear projects
+
+**Usage:**
+Add Linear issue ID (e.g., `BR-123`) or full URL in the "Linear Issue" field. The issue will be cross-referenced and updates will sync.
+
+**Priority Mapping:**
+- Linear Urgent (1) → GreenLight 🔥 P0
+- Linear High (2) → GreenLight ⭐ P1
+- Linear Normal (3) → GreenLight 📌 P2
+- Linear Low (4) → GreenLight 📋 P3
+
+### 📝 Notion Integration
+
+**Features:**
+- Link issues to Notion documentation pages
+- Reference design systems in Notion databases
+- Track project phases in Notion
+- Knowledge base integration
+
+**Usage:**
+Add Notion page URL in the "Notion Page" field to create a two-way reference between GitHub and Notion.
+
+**Database Types:**
+- 📋 **Tasks** - Task management
+- 📚 **Documentation** - Knowledge base
+- 🎯 **Projects** - Project tracking
+- 🎨 **Design** - Design system documentation
+
+### 🎨 Figma Integration (RedLight only)
+
+**Features:**
+- Link templates to Figma designs
+- Reference design prototypes
+- Track visual specifications
+
+**Usage:**
+Add Figma file URL in the "Figma Design" field when creating RedLight templates.
+
+### 🔔 Auto-Notifications (Agent Tasks)
+
+When agents complete automated tasks, they can trigger notifications to:
+- 💬 **Slack** - Post completion to #ai-logs
+- 📋 **Linear** - Update linked issue status
+- 📝 **Notion** - Update database entry
+- 🔔 **All** - Notify all connected services
 
 ---
 

@@ -95,3 +95,17 @@ body:
         - "📋 Specific agent (note in context)"
     validations:
       required: false
+
+  - type: dropdown
+    id: auto_notify
+    attributes:
+      label: Auto-notification
+      description: Automatically notify when agent completes task?
+      options:
+        - "❌ No auto-notification"
+        - "💬 Slack - Post to #ai-logs"
+        - "📋 Linear - Update linked issue"
+        - "📝 Notion - Update database"
+        - "🔔 All integrations"
+    validations:
+      required: false
