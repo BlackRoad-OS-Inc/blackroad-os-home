@@ -14,7 +14,7 @@
     "deploy": "pnpm build && pnpm exec gh-pages -d out"
   },
   "dependencies": {
-    "flexsearch": "0.7.43",
+    "flexsearch": "0.8.212",
     "next": "16.1.6",
     "nextra": "2.13.3",
     "nextra-theme-docs": "2.13.3",
