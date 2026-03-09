@@ -33,7 +33,7 @@
     "globby": "14.0.2",
     "gray-matter": "4.0.3",
     "prettier": "3.8.1",
-    "serve": "14.2.0",
+    "serve": "14.2.6",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "eslint-mdx": "3.7.0"
