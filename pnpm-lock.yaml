@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       flexsearch:
-        specifier: 0.7.43
-        version: 0.7.43
+        specifier: 0.8.212
+        version: 0.8.212
       next:
         specifier: 16.1.6
         version: 16.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1778,6 +1778,9 @@ packages:
 
   flexsearch@0.7.43:
     resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
+
+  flexsearch@0.8.212:
+    resolution: {integrity: sha512-wSyJr1GUWoOOIISRu+X2IXiOcVfg9qqBRyCPRUdLMIGJqPzMo+jMRlvE83t14v1j0dRMEaBbER/adQjp6Du2pw==}
 
   focus-visible@5.2.1:
     resolution: {integrity: sha512-8Bx950VD1bWTQJEH/AM6SpEk+SU55aVnp4Ujhuuxy3eMEBCRwBnTBnVXr9YAPvZL3/CNjCa8u4IWfNmEO53whA==}
@@ -5607,6 +5610,8 @@ snapshots:
   flatted@3.3.3: {}
 
   flexsearch@0.7.43: {}
+
+  flexsearch@0.8.212: {}
 
   focus-visible@5.2.1: {}
 
