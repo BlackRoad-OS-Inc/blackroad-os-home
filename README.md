@@ -32,3 +32,13 @@ Core here means the policies, rituals, and templates that define how BlackRoad O
 - Add pages under `pages/` with front-matter.
 - Keep content lean (under 120 lines) and prefer bullets over long prose.
 - Run `pnpm lint` before opening a PR.
+
+---
+
+**Proprietary Software — BlackRoad OS, Inc.**
+
+This software is proprietary to BlackRoad OS, Inc. Source code is publicly visible for transparency and collaboration. Commercial use, forking, and redistribution are prohibited without written authorization.
+
+**BlackRoad OS — Pave Tomorrow.**
+
+*Copyright 2024-2026 BlackRoad OS, Inc. All Rights Reserved.*
