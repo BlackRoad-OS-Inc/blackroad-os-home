@@ -1,3 +1,11 @@
+# blackroad-os-home
+
+> BlackRoad OS company home: handbook, meeting templates, governance, and operating system for how we work.
+
+Part of the [BlackRoad OS](https://blackroad.io) ecosystem — [BlackRoad-OS-Inc](https://github.com/BlackRoad-OS-Inc)
+
+---
+
 # 🏠 BlackRoad OS Home
 
 Operating handbook, governance portal, and templates for teams, humans, and agents.
